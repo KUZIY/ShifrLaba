@@ -70,3 +70,4 @@ C:\Users\Nikita\Pictures\ShifrLaba\labashifr\obj\Debug\labashifr.csproj.CoreComp
 C:\Users\Nikita\Pictures\ShifrLaba\labashifr\obj\Debug\labashifr.csproj.CopyComplete
 C:\Users\Nikita\Pictures\ShifrLaba\labashifr\obj\Debug\labashifr.exe
 C:\Users\Nikita\Pictures\ShifrLaba\labashifr\obj\Debug\labashifr.pdb
+C:\Users\Nikita\Pictures\ShifrLaba\labashifr\obj\Debug\labashifr.KeyForm.resources
