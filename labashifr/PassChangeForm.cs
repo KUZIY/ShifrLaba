@@ -63,18 +63,7 @@ namespace labashifr
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-
-            FormCollection forms = Application.OpenForms;
-            if (forms.Count == 3)
-            {
-                forms[1].Visible = true;
-                this.Close();
-            }
-            else
-            {
-                forms[0].Visible = true;
-                this.Close();
-            }
+            BackFun();
         }
 
         private void PassChangeButton_Click(object sender, EventArgs e)
@@ -100,7 +89,7 @@ namespace labashifr
                                 NewPassBox.Text = "";
                                 NewPass1Box.Text = "";
                                 OldPassBox.Text = "";
-                                return;
+                                BackFun();
                             }
                             else
                             {
@@ -118,6 +107,21 @@ namespace labashifr
             else
             {
                 MessageBox.Show("Пароли не совпадают, не могут быть пустыми");
+            }
+        }
+
+        private void BackFun ()
+        {
+            FormCollection forms = Application.OpenForms;
+            if (forms.Count == 3)
+            {
+                forms[1].Visible = true;
+                this.Close();
+            }
+            else
+            {
+                forms[0].Visible = true;
+                this.Close();
             }
         }
     }
