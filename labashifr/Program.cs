@@ -12,7 +12,7 @@ namespace labashifr
         static readonly public string dbPath = @"DataBase.txt";
         static readonly public string dbPathMD4 = @"KeyDB.txt";
         static public Controller Controller = new Controller();
-        static public ControllerMD4 ControllerMD4 = new ControllerMD4();
+        static public ControllerMD4 ControllerMD4  = new ControllerMD4();
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -21,7 +21,8 @@ namespace labashifr
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());            
+            Application.Run(new LoginForm());  
+            
         }
     }
 }

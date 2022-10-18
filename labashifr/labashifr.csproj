@@ -57,6 +57,7 @@
     </Compile>
     <Compile Include="Data\Controller.cs" />
     <Compile Include="Data\ControllerMD4.cs" />
+    <Compile Include="Data\Encription.cs" />
     <Compile Include="Data\MD4.cs" />
     <Compile Include="Data\PassLim.cs" />
     <Compile Include="Data\UsersDB.cs" />

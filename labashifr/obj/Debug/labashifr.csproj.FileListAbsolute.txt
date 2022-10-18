@@ -71,3 +71,4 @@ C:\Users\Nikita\Pictures\ShifrLaba\labashifr\obj\Debug\labashifr.csproj.CopyComp
 C:\Users\Nikita\Pictures\ShifrLaba\labashifr\obj\Debug\labashifr.exe
 C:\Users\Nikita\Pictures\ShifrLaba\labashifr\obj\Debug\labashifr.pdb
 C:\Users\Nikita\Pictures\ShifrLaba\labashifr\obj\Debug\labashifr.KeyForm.resources
+C:\Users\Никита\Documents\GitHub\ShifrLaba\labashifr\obj\Debug\labashifr.KeyForm.resources
