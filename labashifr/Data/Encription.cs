@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace labashifr.Data
 {
-    internal class Encription
+    public static class Encription
     {
         public static string Encrypt(string input)
         {
@@ -16,7 +16,7 @@ namespace labashifr.Data
         }
         private static byte[] Encrypt(byte[] input)
         {
-            PasswordDeriveBytes pdb = new PasswordDeriveBytes("andrey", new byte[] { 0x43, 0x87, 0x23, 0x72, 0x45, 0x56, 0x68, 0x14, 0x62, 0x84 });
+            PasswordDeriveBytes pdb = new PasswordDeriveBytes("key", new byte[] { 0x43, 0x87, 0x23, 0x72, 0x45, 0x56, 0x68, 0x14, 0x62, 0x84 });
             MemoryStream ms = new MemoryStream();
             Aes aes = new AesManaged();
             aes.Key = pdb.GetBytes(aes.KeySize / 8);
@@ -37,10 +37,18 @@ namespace labashifr.Data
             Aes aes = new AesManaged();
             aes.Key = pdb.GetBytes(aes.KeySize / 8);
             aes.IV = pdb.GetBytes(aes.BlockSize / 8);
-            CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(), CryptoStreamMode.Write);
-            cs.Write(input, 0, input.Length);
-            cs.Close();
-            return ms.ToArray();
+            //CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(), CryptoStreamMode.Write);
+            //cs.Write(input, 0, input.Length);
+            //cs.Close();
+            //return ms.ToArray();
+            using (var encryptedStream = new MemoryStream())
+            {
+                using (var cryptoStream = new CryptoStream(encryptedStream, aes.CreateDecryptor(), CryptoStreamMode.Write))
+                {
+                    cryptoStream.Write(input, 0, input.Length);
+                }
+                return encryptedStream.ToArray();
+            }
         }
     }
 }

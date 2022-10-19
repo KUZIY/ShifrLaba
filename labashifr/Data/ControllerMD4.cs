@@ -11,15 +11,12 @@ namespace labashifr.Data
     public class ControllerMD4
     {
         public string _keyDB;
-        public string _key;
-
+        public static string _key;
+        readonly string _dbpathMD4;
         public string Key()
         {
-             return _key; 
+            return _key;
         }
-
-
-    readonly string _dbpathMD4;
 
         public ControllerMD4()
         {
@@ -34,13 +31,7 @@ namespace labashifr.Data
             }
             GetKey();
         }
-        public ControllerMD4(string x)
-        {
-            
-            _key = x;
-            _dbpathMD4 = Program.dbPathMD4;
-            GetKey();
-        }
+
         public bool CheckKey()
         {
             MD4 MD4 = new MD4();

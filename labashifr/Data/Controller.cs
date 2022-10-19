@@ -29,8 +29,8 @@ namespace labashifr.Data
         public void GetData()
         {
             string dataJson = "";
-            Program.ControllerMD4 = new Data.ControllerMD4();
-            string k = Program.ControllerMD4._key;
+            //Program.ControllerMD4 = new Data.ControllerMD4();
+            string k = Data.ControllerMD4._key;
             //ControllerMD4 v = new ControllerMD4("Z"); ;  
             //string key = v.Key();
             using (StreamReader reader = new StreamReader(_dbpath))
@@ -40,7 +40,7 @@ namespace labashifr.Data
             if (dataJson != "")
                 //ControllerMD4 controllerMD4 = new ControllerMD4();
 
-                _listUsers = JsonConvert.DeserializeObject<List<UsersDB>>(Encription.Decrypt(dataJson,"key"));    
+                _listUsers = JsonConvert.DeserializeObject<List<UsersDB>>(Encription.Decrypt(dataJson,k));    
         }
 
         public void SaveData()

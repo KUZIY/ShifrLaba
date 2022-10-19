@@ -1,4 +1,5 @@
-﻿using System;
+﻿using labashifr.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,11 +65,13 @@ namespace labashifr
         private void EnterButton_Click(object sender, EventArgs e)
         {
             String Key = KeyBox.Text;
-            Program.ControllerMD4 = new Data.ControllerMD4(Key);
+            Data.ControllerMD4._key = Key; 
+            //Program.ControllerMD4 = new Data.ControllerMD4(Key);
             if (Program.ControllerMD4.CheckKey())
             {
                 FormCollection forms = Application.OpenForms;
                 forms[0].Visible = true;
+                Program.Controller = new Controller();
                 this.Close();
             }
             else
