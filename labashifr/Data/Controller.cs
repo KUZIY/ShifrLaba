@@ -29,17 +29,23 @@ namespace labashifr.Data
         public void GetData()
         {
             string dataJson = "";
+            //Program.ControllerMD4 = new Data.ControllerMD4();
+            string k = Data.ControllerMD4._key;
+            //ControllerMD4 v = new ControllerMD4("Z"); ;  
+            //string key = v.Key();
             using (StreamReader reader = new StreamReader(_dbpath))
             {
                 dataJson = reader.ReadToEnd();
             }
-            if (dataJson !="")
-                _listUsers = JsonConvert.DeserializeObject<List<UsersDB>>(dataJson);    
+            if (dataJson != "")
+                //ControllerMD4 controllerMD4 = new ControllerMD4();
+
+                _listUsers = JsonConvert.DeserializeObject<List<UsersDB>>(Encription.Decrypt(dataJson,k));    
         }
 
         public void SaveData()
         {
-            string dataJson = JsonConvert.SerializeObject(_listUsers);
+            string dataJson = Encription.Encrypt(JsonConvert.SerializeObject(_listUsers));
 
             using (StreamWriter sw = new StreamWriter(_dbpath, false))
             {

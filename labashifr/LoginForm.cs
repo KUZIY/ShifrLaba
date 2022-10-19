@@ -19,9 +19,12 @@ namespace labashifr
         public static string Login;
         public LoginForm()
         {
+
             InitializeComponent();
             this.PasswordBox.AutoSize = false;
             this.PasswordBox.Size = new Size(this.LoginBox.Size.Width, this.LoginBox.Size.Height);
+            this.Visible = false;
+            Application.Run(new KeyForm());
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
